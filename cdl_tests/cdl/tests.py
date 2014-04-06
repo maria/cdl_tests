@@ -11,7 +11,6 @@ from django.test import TestCase
 from factories import UserFactory
 
 
-
 class SimpleTest(TestCase):
     def test_basic_addition(self):
         """
@@ -26,3 +25,13 @@ class TestUser(unittest.TestCase):
         user = UserFactory()
         self.assertIsNotNone(user.firstname)
 
+    def test_users_have_different_names(self):
+        user_one = UserFactory()
+        user_two = UserFactory()
+        self.assertNotEqual(user_one.firstname + user_one.lastname,
+                            user_two.firstname + user_two.lastname,
+                            "We have users with the same name!")
+
+    def test_user_password_has_max_length(self):
+        user = UserFactory()
+        self.assertLessEqual(len(user.password), 20)
