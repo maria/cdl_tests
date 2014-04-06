@@ -24,5 +24,5 @@ class TestUser(unittest.TestCase):
 
     def test_user_attributes(self):
         user = UserFactory()
-        self.assertNotNone(user.firstname)
+        self.assertIsNotNone(user.firstname)
 
