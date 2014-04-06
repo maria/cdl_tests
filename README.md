@@ -2,7 +2,7 @@
 
 ## Testing 
 
- - [Prezentare]()
+ - [Presentation](https://docs.google.com/presentation/d/1OPQ5B1FqVqzh7gzJ5rsj1mwCM3M1wvt8G46SAMQOs0g/edit?usp=sharing)
  - Demo:
 
     - test case
@@ -13,9 +13,10 @@
 ### Demo
 
 #### TestCase
-  - Pachete: `unittest`, `unittest2`
+
+  - Packages: `unittest`, `unittest2`
   - Runner: `nose`
-  - Command: `nosetests test_use.py`
+  - Command: `nosetests test_user.py`
 
 
 ```python
@@ -26,9 +27,10 @@ class TestUser(unittest.TestCase):
         pass
 ```
 
-Run the test, see it passes.
+Run the test, see it passes, `nosetests test_user.py`
 
 #### Model
+
    - Describe a `User` model:
 
 ```python
@@ -48,15 +50,18 @@ class User(object):
 Import the class in the console, create an object of type `User`.
 
 #### Factory
+
    - Package: `factory-boy`
-   - Describe a factory for the `User` model, `UserFactory`:
+   - Describe a factory for the `User` model:
 
 ```python
 import factory
 
 
 class UserFactory(factory.Factory):
-    FACTORY_FOR = 'User'
+    # This will raise an error for now, uncomment it when
+    # we create a Django app
+    #FACTORY_FOR = 'User'
 
     # Generate random strings for Users names, like: Name-1
     firstname = factory.Sequence(lambda n: "FirstName-%s" % str(n))
@@ -101,28 +106,27 @@ attributes as class attributes.
 
     - Copy the factory class:
 
-```
-$ mkdir cdl_tests/cdl/tests/factories
-$ cp user_factory.py ~/cdl_tests/cdl/tests/factories/.`
-```
+  ```
+  $ mkdir cdl_tests/cdl/tests/factories
+  $ cp user_factory.py ~/cdl_tests/cdl/tests/factories/.`
+  ```
     
     - Create the application Database and sync the models
 
-```
-$ cd cdl_tests
-$ vim cdl_tests/settings.py
-```
+  ```
+  $ cd cdl_tests
+  $ vim cdl_tests/settings.py
+  ```
+  
     - Update the file database and installed apps lists - check the file in the
 repo.
 
-    - Sync the database
-
-```$ python manage.py syncdb```
+    - Sync the database: `$ python manage.py syncdb`
 
 
 #### Copy and run the tests
 
- - ```cp test_user.py cdl_tests/cdl/tests/.```
+    - `cp test_user.py cdl_tests/cdl/tests/.`
 
- - ```python manage.py test cdl/tests/test_user.py```
+    - `python manage.py test cdl/tests/test_user.py`
 
