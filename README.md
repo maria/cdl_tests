@@ -72,23 +72,24 @@ class UserFactory(factory.Factory):
 ```
 
 #### Create Django project and app
-    - Check if you have Django, otherwise install Django
+
+  - Check if you have Django, otherwise install Django
 
 ```
-$ pip freeze | grep Django
-$ sudo pip install Django
+  $ pip freeze | grep Django
+  $ sudo pip install Django
 ```
 
-    - Create Django project and app
+  - Create Django project and app
 
 ```
 $ django-admin.py startproject cdl_tests
 $ cd cdl/
 $ django-admin.py startapp cdl
 ```
-    - Add `User` as a Django model:
-        - ` $ cd `cdl_tests/cdl/`
-        - open `models.py`
+  - Add `User` as a Django model:
+      - `$ cd cdl_tests/cdl/`
+      - open and edit `models.py`
 
 ```python
 from django.db import models
@@ -104,29 +105,29 @@ class User(models.Model):
 As you can see we don't have a `__init__` method, we just define the model
 attributes as class attributes.
 
-    - Copy the factory class:
+  - Copy the factory class:
 
-  ```
-  $ mkdir cdl_tests/cdl/tests/factories
-  $ cp user_factory.py ~/cdl_tests/cdl/tests/factories/.`
-  ```
+```
+$ mkdir cdl_tests/cdl/tests/factories
+$ cp user_factory.py ~/cdl_tests/cdl/tests/factories/.`
+```
     
-    - Create the application Database and sync the models
+  - Create the application Database and sync the models
 
-  ```
+```
   $ cd cdl_tests
   $ vim cdl_tests/settings.py
-  ```
+```
   
-    - Update the file database and installed apps lists - check the file in the
+  - Update the file database and installed apps lists - check the file in the
 repo.
 
-    - Sync the database: `$ python manage.py syncdb`
+  - Sync the database: `$ python manage.py syncdb`
 
 
 #### Copy and run the tests
 
-    - `cp test_user.py cdl_tests/cdl/tests/.`
+  - Copy the test file inside the project `cp test_user.py cdl_tests/cdl/tests/.`
 
-    - `python manage.py test cdl/tests/test_user.py`
+  -  `python manage.py test cdl/tests/test_user.py`
 
