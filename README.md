@@ -119,9 +119,7 @@ $ cp user_factory.py ~/cdl_tests/cdl/tests/factories/.`
   $ vim cdl_tests/settings.py
 ```
   
-  - Update the file database and installed apps lists - check the file in the
-repo.
-
+  - Update the project database configuration and installed apps lists, [example](https://github.com/marianitadn/cdl_tests/commit/83389abdb55cc644b98edc8c8fffd0d855cec9df)
   - Sync the database: `$ python manage.py syncdb`
 
 
@@ -130,4 +128,13 @@ repo.
   - Copy the test file inside the project `cp test_user.py cdl_tests/cdl/tests/.`
 
   -  `python manage.py test cdl/tests/test_user.py`
+  
+The runner is build in Django, no need to use nosetests anymore.
+
+
+####
+
+If you have any questions open an issue.
+
+Thanks! :)
 
