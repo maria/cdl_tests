@@ -106,7 +106,7 @@ attributes as class attributes.
 ```
 $ touch ~/cdl_tests/cdl/factories.py
 ```
-and copy the class inside the file, [example]().
+and copy the class inside the file, [example](https://github.com/marianitadn/cdl_tests/blob/master/cdl_tests/cdl/factories.py).
 
     
   - Create the application Database and sync the models
@@ -122,7 +122,7 @@ and copy the class inside the file, [example]().
 
 #### Copy and run the tests
 
-  - Copy the test case inside the project in the file `~/cdl_tests/cdl/tests.py`
+  - Copy the test case inside the project in the file `~/cdl_tests/cdl/tests.py`, [example](https://github.com/marianitadn/cdl_tests/blob/master/cdl_tests/cdl/tests.py)
 
   - Run all the project tests, with the command: `python manage.py test`
   
