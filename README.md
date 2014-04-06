@@ -59,10 +59,6 @@ import factory
 
 
 class UserFactory(factory.Factory):
-    # This will raise an error for now, uncomment it when
-    # we create a Django app
-    #FACTORY_FOR = 'User'
-
     # Generate random strings for Users names, like: Name-1
     firstname = factory.Sequence(lambda n: "FirstName-%s" % str(n))
     lastname = factory.Sequence(lambda n: "LastName-%s" % str(n))
@@ -105,12 +101,13 @@ class User(models.Model):
 As you can see we don't have a `__init__` method, we just define the model
 attributes as class attributes.
 
-  - Copy the factory class:
+  - Copy the factory class in a new factories file:
 
 ```
-$ mkdir cdl_tests/cdl/tests/factories
-$ cp user_factory.py ~/cdl_tests/cdl/tests/factories/.`
+$ touch ~/cdl_tests/cdl/factories.py
 ```
+and copy the class inside the file, [example]().
+
     
   - Create the application Database and sync the models
 
@@ -125,11 +122,11 @@ $ cp user_factory.py ~/cdl_tests/cdl/tests/factories/.`
 
 #### Copy and run the tests
 
-  - Copy the test file inside the project `cp test_user.py cdl_tests/cdl/tests/.`
+  - Copy the test case inside the project in the file `~/cdl_tests/cdl/tests.py`
 
-  -  `python manage.py test cdl/tests/test_user.py`
+  - Run all the project tests, with the command: `python manage.py test`
   
-The runner is build in Django, no need to use nosetests anymore.
+The runner is build in Django, no need to use `nosetests` anymore.
 
 
 ####
