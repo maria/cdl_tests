@@ -126,5 +126,3 @@ repo.
 
  - ```python manage.py test cdl/tests/test_user.py```
 
-
-
